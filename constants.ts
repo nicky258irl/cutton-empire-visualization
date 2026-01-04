@@ -1,4 +1,4 @@
-import { CapitalismPhase, HistoricalEvent } from './types';
+import { CapitalismPhase, HistoricalEvent, ProductionRegion, TradeRoute } from './types';
 
 export const HISTORICAL_EVENTS: HistoricalEvent[] = [
   {
@@ -281,6 +281,57 @@ export const HISTORICAL_EVENTS: HistoricalEvent[] = [
     description: "尽管制造业转移，美国通过巨额政府补贴和高度机械化的精准农业，依然是世界上最大的棉花出口国。Lubbock是这个高科技农业帝国的中心。",
     impact: "在自由贸易的幌子下，国家补贴扭曲了全球市场，使得西非等地的贫穷棉农难以生存。",
   }
+];
+
+export const PRODUCTION_REGIONS: ProductionRegion[] = [
+  // Origins
+  { id: 'p-ind-guj', phase: CapitalismPhase.ORIGINS, coordinates: [71.1924, 22.2587], name: "Gujarat (Weaving)", radius: 10 },
+  { id: 'p-ind-ben', phase: CapitalismPhase.ORIGINS, coordinates: [88.3639, 23.0000], name: "Bengal (Muslin)", radius: 10 },
+  { id: 'p-chn-yan', phase: CapitalismPhase.ORIGINS, coordinates: [120.5000, 31.0000], name: "Yangtze Delta", radius: 8 },
+  { id: 'p-mex-teh', phase: CapitalismPhase.ORIGINS, coordinates: [-97.5000, 18.5000], name: "Tehuacan", radius: 6 },
+  
+  // War Capitalism
+  { id: 'p-car-dom', phase: CapitalismPhase.WAR_CAPITALISM, coordinates: [-72.0000, 19.0000], name: "Saint-Domingue", radius: 8 },
+  { id: 'p-bra-rec', phase: CapitalismPhase.WAR_CAPITALISM, coordinates: [-35.0000, -8.0000], name: "Pernambuco", radius: 8 },
+  { id: 'p-ind-dec', phase: CapitalismPhase.WAR_CAPITALISM, coordinates: [77.0000, 16.0000], name: "Deccan Plateau", radius: 12 },
+
+  // Industrial Capitalism
+  { id: 'p-usa-south', phase: CapitalismPhase.INDUSTRIAL_CAPITALISM, coordinates: [-88.0000, 33.0000], name: "The Cotton Belt", radius: 25 },
+  
+  // Global Reconstruction
+  { id: 'p-egy-del', phase: CapitalismPhase.GLOBAL_RECONSTRUCTION, coordinates: [31.0000, 30.5000], name: "Nile Delta", radius: 8 },
+  { id: 'p-ind-ber', phase: CapitalismPhase.GLOBAL_RECONSTRUCTION, coordinates: [77.5000, 21.0000], name: "Berar", radius: 10 },
+  { id: 'p-uzb-fer', phase: CapitalismPhase.GLOBAL_RECONSTRUCTION, coordinates: [71.0000, 40.5000], name: "Fergana Valley", radius: 7 },
+  
+  // Return of South
+  { id: 'p-chn-xin', phase: CapitalismPhase.RETURN_OF_SOUTH, coordinates: [85.0000, 41.0000], name: "Xinjiang", radius: 12 },
+  { id: 'p-usa-tex', phase: CapitalismPhase.RETURN_OF_SOUTH, coordinates: [-101.8, 33.5], name: "Texas High Plains", radius: 10 },
+  { id: 'p-afr-wst', phase: CapitalismPhase.RETURN_OF_SOUTH, coordinates: [2.0000, 11.0000], name: "West Africa", radius: 15 },
+];
+
+export const TRADE_ROUTES: TradeRoute[] = [
+  // Origins
+  { id: 'r-ind-red', phase: CapitalismPhase.ORIGINS, start: [70, 20], end: [45, 12], type: 'textiles' },
+  { id: 'r-ind-sea', phase: CapitalismPhase.ORIGINS, start: [80, 15], end: [100, 3], type: 'textiles' },
+  
+  // War Capitalism (Triangle Trade elements)
+  { id: 'r-tri-slv', phase: CapitalismPhase.WAR_CAPITALISM, start: [2, 6], end: [-40, -10], type: 'slaves', label: "Middle Passage" },
+  { id: 'r-tri-slv2', phase: CapitalismPhase.WAR_CAPITALISM, start: [2, 6], end: [-75, 18], type: 'slaves' },
+  { id: 'r-tri-cot', phase: CapitalismPhase.WAR_CAPITALISM, start: [-75, 20], end: [-5, 50], type: 'cotton', label: "Raw Cotton" },
+  { id: 'r-tri-tex', phase: CapitalismPhase.WAR_CAPITALISM, start: [75, 20], end: [0, 51], type: 'textiles', label: "Calicoes" },
+  
+  // Industrial Capitalism
+  { id: 'r-liv-no', phase: CapitalismPhase.INDUSTRIAL_CAPITALISM, start: [-90, 29], end: [-3, 53], type: 'cotton', label: "Cotton Highway" },
+  { id: 'r-man-exp', phase: CapitalismPhase.INDUSTRIAL_CAPITALISM, start: [-3, 53], end: [72, 18], type: 'textiles', label: "Finished Cloth" },
+  
+  // Global Reconstruction
+  { id: 'r-bom-liv', phase: CapitalismPhase.GLOBAL_RECONSTRUCTION, start: [72, 18], end: [-3, 53], type: 'cotton' },
+  { id: 'r-egy-liv', phase: CapitalismPhase.GLOBAL_RECONSTRUCTION, start: [30, 31], end: [-3, 53], type: 'cotton' },
+  
+  // Return of South
+  { id: 'r-usa-chn', phase: CapitalismPhase.RETURN_OF_SOUTH, start: [-118, 33], end: [122, 31], type: 'cotton' },
+  { id: 'r-chn-usa', phase: CapitalismPhase.RETURN_OF_SOUTH, start: [122, 31], end: [-122, 37], type: 'textiles', label: "Fast Fashion" },
+  { id: 'r-ban-eur', phase: CapitalismPhase.RETURN_OF_SOUTH, start: [90, 23], end: [10, 50], type: 'textiles' },
 ];
 
 export const PHASE_COLORS: Record<CapitalismPhase, string> = {

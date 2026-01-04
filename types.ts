@@ -24,9 +24,19 @@ export interface HistoricalEvent {
   impact: string;
 }
 
-export interface MapMarkerProps {
-  coordinates: Coordinates;
-  label: string;
-  isActive: boolean;
+export interface TradeRoute {
+  id: string;
   phase: CapitalismPhase;
+  start: [number, number]; // [lng, lat]
+  end: [number, number];   // [lng, lat]
+  label?: string;
+  type: 'cotton' | 'textiles' | 'slaves' | 'machinery';
+}
+
+export interface ProductionRegion {
+  id: string;
+  phase: CapitalismPhase;
+  coordinates: [number, number]; // [lng, lat]
+  name: string;
+  radius: number; // For visual scaling
 }
