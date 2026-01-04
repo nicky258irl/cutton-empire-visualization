@@ -1,0 +1,5 @@
+{
+  "name": "Empire of Cotton Visualization",
+  "description": "An interactive historical visualization based on Sven Beckert's 'Empire of Cotton', mapping the evolution of the global cotton trade and capitalist expansion.",
+  "requestFramePermissions": []
+}
